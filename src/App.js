@@ -26,9 +26,9 @@ class App extends React.Component {
     <div className="App">
       <header className="App-header">
         <img src={"https://www.learningtogive.org/sites/default/files/jeopardy-logo.png"} className="Jeopardy-logo" alt="logo" />
-
+        
         <p>
-          T
+          
         </p>
         <a
           className="App-link"
