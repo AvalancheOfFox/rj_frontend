@@ -20,3 +20,18 @@
 .App-link {
   color: #09d3ac;
 }
+
+.single-question{
+  background-color: #1d36c2;
+  border-radius: 5px;
+  border: 2px solid white;
+  padding: 3px;
+  margin: 5px;
+}
+
+.gameboard{
+  background-color: cornflowerblue;
+  margin: 10px;
+  padding: 10px;
+  
+}

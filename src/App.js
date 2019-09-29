@@ -21,6 +21,7 @@ class App extends React.Component {
     this.setState({
       questions: data
     })
+    console.log(this.state.questions)
   }
   render(){
   return (
@@ -28,9 +29,9 @@ class App extends React.Component {
       <header className="App-header">
         <img src={"https://www.learningtogive.org/sites/default/files/jeopardy-logo.png"} className="Jeopardy-logo" alt="logo" />
         
-        <p>
+        <div>
           <GameBoard questions={this.state.questions} /> 
-        </p>
+        </div>
        
       </header>
     </div>

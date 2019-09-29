@@ -13,7 +13,7 @@ export default class GameBoard extends Component{
     
     allQuestions = () => {
         return this.props.questions.map((q) => {
-            return <Question question={q} key={q.id} />
+            return <Question question={q} key={q.id} category={q.category} />
         })
     }
    
@@ -22,7 +22,7 @@ export default class GameBoard extends Component{
         
 
         return(
-            <div>
+            <div className="gameboard">
                 {this.allQuestions()}
             </div>
         )
