@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import GameBoard from './containers/GameBoard'
 
 class App extends React.Component {
 
@@ -28,16 +29,9 @@ class App extends React.Component {
         <img src={"https://www.learningtogive.org/sites/default/files/jeopardy-logo.png"} className="Jeopardy-logo" alt="logo" />
         
         <p>
-          
+          <GameBoard questions={this.state.questions} /> 
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+       
       </header>
     </div>
   );
