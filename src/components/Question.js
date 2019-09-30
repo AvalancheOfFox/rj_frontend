@@ -3,19 +3,18 @@ import React, { Component } from 'react'
 
 export default class Question extends Component{
 
-
-    showMeDetails =() => {
-        console.log(this.props.category)
+    state = {
+        answered: false
     }
 
 
 render(){
     return(
-        <div className="single-question" onClick={() => this.props.handleQuestionClick(this.props.question)}>
+        <div className="single-question" onClick={ () => {this.setState({answered:true})}}>
             <h1>Value: ${this.props.question.value}</h1>
             <h4>{this.props.question.question}</h4>
-            <p>{this.props.category.title}</p>
-            <p>{this.showMeDetails()}</p>
+            <p className={!this.state.answered == true ? "hidden": ""}>{this.props.question.answer}</p>
+            
         </div>
     )
 }
