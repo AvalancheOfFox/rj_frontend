@@ -50,6 +50,9 @@
 
 .currentScore{
   position: fixed;
-  background-color: fuchsia;
-  
+  background-color: forestgreen;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 3px;
+
 }
