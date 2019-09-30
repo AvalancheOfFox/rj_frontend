@@ -14,16 +14,6 @@ export default class GameBoard extends Component{
     }
 
 
-
-    handleQuestionClick = (question) => {
-        console.log(question, "a handleQuestionClick fired")
-        // adds the question to ANS questions
-        this.setState({
-            AnsQuestions: [...this.state.AnsQuestions, question]
-        })
-        
-    }
-
     componentDidMount(){
        this.getCategories()
     }
