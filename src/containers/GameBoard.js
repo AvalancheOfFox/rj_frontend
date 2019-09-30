@@ -11,15 +11,12 @@ export default class GameBoard extends Component{
         AnsQuestions: [],
         categories: [],
         score: 0,
-
     }
-    
+
 
 
     handleQuestionClick = (question) => {
         console.log(question, "a handleQuestionClick fired")
-        console.log(JSON.parse(question.category))
-       
         // adds the question to ANS questions
         this.setState({
             AnsQuestions: [...this.state.AnsQuestions, question]
@@ -64,8 +61,11 @@ export default class GameBoard extends Component{
         
 
         return(
+            <div>
+            <div className="currentScore"> Score: {this.state.score} </div>
             <div className="gameboard">
                 {this.allQuestions()}
+            </div>
             </div>
         )
     }
