@@ -14,11 +14,18 @@ export default class GameBoard extends Component{
     
     handleQuestionClick = (question) => {
         console.log(question, "a handleQuestionClick fired")
+        console.log(typeof question.category)
+       
+        // adds the question to ANS questions
+        this.setState({
+            AnsQuestions: [...this.state.AnsQuestions, question]
+        })
+        
     }
 
     allQuestions = () => {
         return this.props.questions.map((q) => {
-            return <Question handleQuestionClick = {this.handleQuestionClick} question={q} key={q.id} category={q.category} />
+            return <Question handleQuestionClick={this.handleQuestionClick} question={q} key={q.id} />
         })
     }
    
