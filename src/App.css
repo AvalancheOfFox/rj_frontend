@@ -47,3 +47,9 @@
 .incorrect{
   background-color: crimson;
 }
+
+.currentScore{
+  position: fixed;
+  background-color: fuchsia;
+  
+}
