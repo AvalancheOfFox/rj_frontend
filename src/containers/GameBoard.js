@@ -9,12 +9,16 @@ export default class GameBoard extends Component{
 
     state = {
         AnsQuestions: [],
+        categories: [],
         score: 0,
+
     }
     
+
+
     handleQuestionClick = (question) => {
         console.log(question, "a handleQuestionClick fired")
-        console.log(typeof question.category)
+        console.log(JSON.parse(question.category))
        
         // adds the question to ANS questions
         this.setState({
@@ -23,9 +27,35 @@ export default class GameBoard extends Component{
         
     }
 
+    componentDidMount(){
+       this.getCategories()
+    }
+
+    getCategories = () => {
+        return fetch('http://jservice.io/api/categories?count=20')
+            .then(res => res.json())
+            .then(categories => this.setState({
+                categories: categories
+            }))
+    }
+
+    plusScore = (value) =>{
+        console.log(value, "a plus click")
+        this.setState({
+            score: parseInt(this.state.score) + parseInt(value)
+        })
+    }
+
+    minusScore = (value) => {
+        console.log(value, "a minus click")
+        this.setState({
+            score: parseInt(this.state.score) - parseInt(value)
+        })
+    }
+
     allQuestions = () => {
         return this.props.questions.map((q) => {
-            return <Question handleQuestionClick={this.handleQuestionClick} question={q} key={q.id} />
+            return <Question plusScore={this.plusScore} minusScore={this.minusScore} handleQuestionClick={this.handleQuestionClick} question={q} key={q.id} />
         })
     }
    

@@ -38,3 +38,12 @@
 .hidden{
   visibility: hidden;
 }
+
+.correct{
+  background-color: chartreuse;
+  color: black;
+}
+
+.incorrect{
+  background-color: crimson;
+}
