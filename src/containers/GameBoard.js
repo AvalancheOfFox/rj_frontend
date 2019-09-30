@@ -28,6 +28,7 @@ export default class GameBoard extends Component{
        this.getCategories()
     }
 
+    // not sure if this is even necessary
     getCategories = () => {
         return fetch('http://jservice.io/api/categories?count=20')
             .then(res => res.json())
@@ -36,6 +37,7 @@ export default class GameBoard extends Component{
             }))
     }
 
+    // increments our score, called by each question
     plusScore = (value) =>{
         console.log(value, "a plus click")
         this.setState({
@@ -43,6 +45,7 @@ export default class GameBoard extends Component{
         })
     }
 
+    // decrements our score, called by each question
     minusScore = (value) => {
         console.log(value, "a minus click")
         this.setState({
@@ -50,6 +53,7 @@ export default class GameBoard extends Component{
         })
     }
 
+    // returns us the questions
     allQuestions = () => {
         return this.props.questions.map((q) => {
             return <Question plusScore={this.plusScore} minusScore={this.minusScore} handleQuestionClick={this.handleQuestionClick} question={q} key={q.id} />
@@ -58,8 +62,6 @@ export default class GameBoard extends Component{
    
 
     render() {
-        
-
         return(
             <div>
             <div className="currentScore"> Score: {this.state.score} </div>

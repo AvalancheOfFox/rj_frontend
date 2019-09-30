@@ -13,6 +13,7 @@ render(){
         <div className="single-question" >
             <div onClick={() => this.props.handleQuestionClick(this.props.question)}>
             <h1>Value: ${this.props.question.value}</h1>
+            <h1>{(this.props.question.category).charAt(0).toUpperCase() + this.props.question.category.slice(1)}</h1>
             <h4>{this.props.question.question}</h4>
             <p className={!this.state.answered == true ? "hidden": ""}>{this.props.question.answer}</p>
             </div>
