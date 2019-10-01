@@ -46,7 +46,7 @@ export default class GameBoard extends Component{
     // returns us the questions
     allQuestions = () => {
         return this.props.questions.map((q) => {
-            return <Question plusScore={this.plusScore} minusScore={this.minusScore} handleQuestionClick={this.handleQuestionClick} question={q} key={q.id} />
+            return <Question plusScore={this.plusScore} minusScore={this.minusScore} question={q} key={q.id} />
         })
     }
    
