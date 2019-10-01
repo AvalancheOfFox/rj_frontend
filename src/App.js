@@ -1,8 +1,9 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import GameBoard from './containers/GameBoard'
 import Login from './components/Login'
+import { BrowserRouter, Route, Link, Switch, Redirect } from "react-router-dom";
+import fourOhFour from './components/fourOhFour'
 
 class App extends React.Component {
 
@@ -12,13 +13,14 @@ class App extends React.Component {
     currentName: ""
   }
 
+  //initial fetch
   componentDidMount(){
     console.log("app component mounted")
     fetch('http://localhost:3000/questions')
     .then(res => res.json())
       .then(data => this.addQuestionsToState(data));
   }
-
+// adds to state
   addQuestionsToState = (data) =>{
     console.log("adding questions to state", data)
     this.setState({
@@ -52,16 +54,21 @@ class App extends React.Component {
 
   render(){
   return (
+    <BrowserRouter>
     <div className="App">
       <header className="App-header">
         <img src={"https://www.learningtogive.org/sites/default/files/jeopardy-logo.png"} className="Jeopardy-logo" alt="logo" />
-        
         <div>
-          {this.isLoggedIn() ? <GameBoard username={this.state.currentName}questions={this.state.questions} user={this.state.currentUsername}/>  : <Login setUser={this.setCurrentUserId}/>}  
+        <Switch>
+              <Route path='/login' exact render={(props) => this.state.currentUserId ? <Redirect to='/game' /> : <Login setUser={this.setCurrentUserId} />}/>
+              <Route path='/game' exact render={(props) => this.state.currentUserId ? <GameBoard username={this.state.currentName} questions={this.state.questions} user={this.state.currentUsername} /> : <Redirect to='/login'/>} />   
+              <Route component={ fourOhFour } /> 
+          {/* { <GameBoard username={this.state.currentName}questions={this.state.questions} user={this.state.currentUsername}/>  : <Login setUser={this.setCurrentUserId}/>}   */}
+        </Switch>
         </div>
-       
       </header>
     </div>
+    </BrowserRouter>
   );
   }
 }
