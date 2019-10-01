@@ -13,12 +13,10 @@ export default class GameBoard extends Component{
         score: 0,
     }
 
-
     componentDidMount(){
        this.getCategories()
     }
 
-    // not sure if this is even necessary
     getCategories = () => {
         return fetch('http://jservice.io/api/categories?count=20')
             .then(res => res.json())
@@ -43,6 +41,7 @@ export default class GameBoard extends Component{
         })
     }
 
+  
     // returns us the questions
     allQuestions = () => {
         return this.props.questions.map((q) => {
@@ -54,7 +53,10 @@ export default class GameBoard extends Component{
     render() {
         return(
             <div>
-            <div className="currentScore"> Score: {this.state.score} </div>
+            <div className="currentScore">
+                <p>Welcome {this.props.username}</p>
+                 Score: {this.state.score}
+            </div>
             <div className="gameboard">
                 {this.allQuestions()}
             </div>

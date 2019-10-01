@@ -9,7 +9,7 @@ export default class Question extends Component{
     }
 
     handleQuestionFlip = () => {
-        if(this.state.flipped == false){
+        if(this.state.flipped === false){
             this.setState({
                 flipped: true
             })
@@ -18,7 +18,7 @@ export default class Question extends Component{
 
     handleAnswer = () => {
         console.log("handleAnsweer hit")
-        if (this.state.answered == false) {
+        if (this.state.answered === false) {
             this.setState({
                 answered: true
             })
