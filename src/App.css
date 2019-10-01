@@ -33,6 +33,7 @@
   background-color: cornflowerblue;
   margin: 10px;
   padding: 10px;
+
 }
 
 .hidden{
@@ -52,8 +53,16 @@
   position: fixed;
   background-color: forestgreen;
   padding: 5px;
-  margin: 5px;
+  margin: 4px;
   border-radius: 3px;
   bottom: 0;
+  text-align: center;
+  align-content: center;
+}
 
+.formStyle{
+  padding: 2px;
+  bottom: 500px;
+  margin: 50px;
+  border: lime;
 }
