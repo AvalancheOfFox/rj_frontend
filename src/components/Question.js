@@ -29,8 +29,8 @@ render(){
     return(
         <div className="single-question" >
             <div onClick={this.handleQuestionFlip}>
-                <h1>Value: ${this.props.question.value}</h1>
-                <h1>{(this.props.question.category).charAt(0).toUpperCase() + this.props.question.category.slice(1)}</h1>
+                <h1 className="value">Value: ${this.props.question.value}</h1>
+                <h1 className="category">{(this.props.question.category).charAt(0).toUpperCase() + this.props.question.category.slice(1)}</h1>
                 <h4 onClick={this.handleAnswer} className={!this.state.flipped == true ? "hidden": ""}>{this.props.question.question}</h4>
                 <p className={!this.state.answered == true ? "hidden": ""}>{this.props.question.answer}</p>
             </div>

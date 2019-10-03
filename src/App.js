@@ -60,7 +60,7 @@ class App extends React.Component {
         <img src={"https://www.learningtogive.org/sites/default/files/jeopardy-logo.png"} className="Jeopardy-logo" alt="logo" />
         <div>
         <Switch>
-              <Route path='/login' exact render={(props) => this.state.currentUserId ? <Redirect to='/game' /> : <Login setUser={this.setCurrentUserId} />}/>
+              <Route path='/' exact render={(props) => this.state.currentUserId ? <Redirect to='/game' /> : <Login setUser={this.setCurrentUserId} />}/>
               <Route path='/game' exact render={(props) => this.state.currentUserId ? <GameBoard username={this.state.currentName} questions={this.state.questions} user={this.state.currentUsername} /> : <Redirect to='/login'/>} />   
               <Route component={ fourOhFour } /> 
           {/* { <GameBoard username={this.state.currentName}questions={this.state.questions} user={this.state.currentUsername}/>  : <Login setUser={this.setCurrentUserId}/>}   */}
