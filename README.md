@@ -1,5 +1,6 @@
 ## Project title
 React Jeopardy is exactly what it sounds like - a bare bones implementation of the game Jeopardy built using React. 
+Basic functionality can be seen [here](https://youtu.be/YqJLycB1oxU)
 
 ## Motivation
 I love Jeopardy and I wanted to get more hands on experience with React in a low stakes environemnt. This project is meant to not only give me more fun facts but also to further my React skills. 
