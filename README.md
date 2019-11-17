@@ -8,11 +8,7 @@ I love Jeopardy and I wanted to get more hands on experience with React in a low
 ## Code style
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
  
-## Screenshots
-Include logo/demo screenshot etc.
-
 ## Tech/framework used
-Ex. -
 
 <b>Built with</b>
 - [React](https://reactjs.org)
