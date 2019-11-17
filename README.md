@@ -1,4 +1,4 @@
-## Project title
+## React Jeopardy!
 React Jeopardy is exactly what it sounds like - a bare bones implementation of the game Jeopardy built using React. 
 Basic functionality can be seen [here](https://youtu.be/YqJLycB1oxU).
 
