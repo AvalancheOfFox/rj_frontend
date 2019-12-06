@@ -11,6 +11,7 @@ export default class GameBoard extends Component{
         AnsQuestions: [],
         categories: [],
         score: 0,
+        answeredQuestions: []
     }
 
     componentDidMount(){
@@ -25,20 +26,38 @@ export default class GameBoard extends Component{
             }))
     }
 
-    // increments our score, called by each question
-    plusScore = (value) =>{
-        console.log(value, "a plus click")
+    // increments our score, called by each question. conditional on answer visibility
+    plusScore = (value, id, flipState) =>{
+        console.log(flipState, "flipState")
+        if (flipState != true) {
+            alert(`You must read the question before scoring yourself.`)
+            return
+        }
+        if (this.state.answeredQuestions.includes(id)) {
+            alert(`You've already answered this question!`)
+        } else{
         this.setState({
-            score: parseInt(this.state.score) + parseInt(value)
+            score: parseInt(this.state.score) + parseInt(value),
+            answeredQuestions: [...this.state.answeredQuestions, id]
         })
+        }
     }
 
-    // decrements our score, called by each question
-    minusScore = (value) => {
-        console.log(value, "a minus click")
+    // decrements our score, called by each question. conditional on answer visibility
+    minusScore = (value, id, flipState) => {
+        console.log(flipState, "flipState")
+        if(flipState != true){
+            alert(`You must read the question before scoring yourself.`)
+            return
+        }
+        if(this.state.answeredQuestions.includes(id) ){
+            alert(`You've already answered this question!`)
+        } else{
         this.setState({
-            score: parseInt(this.state.score) - parseInt(value)
+            score: parseInt(this.state.score) - parseInt(value),
+            answeredQuestions: [...this.state.answeredQuestions, id]
         })
+    }
     }
 
   
