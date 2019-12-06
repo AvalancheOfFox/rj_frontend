@@ -17,16 +17,16 @@ export default class Question extends Component{
         }
     }
 
-    handleAnswer = (questionId) => {
+    handleAnswer = () => {
         console.log("handleAnswer hit")
         if (this.state.answered === false) {
             this.setState({
                 answered: true
-
             })
         }
     
     }
+
 
 
 render(){
@@ -38,8 +38,8 @@ render(){
                 <h4 onClick={this.handleAnswer} className={!this.state.flipped === true ? "hidden": ""}>{this.props.question.question}</h4>
                 <p className={!this.state.answered === true ? "hidden": ""}>{this.props.question.answer}</p>
             </div>
-            <div className="correct" onClick={() => this.props.plusScore(this.props.question.value, this.props.question.id)}> Correct </div>
-            <div className="incorrect" onClick={() => this.props.minusScore(this.props.question.value, this.props.question.id)}> Incorrect </div>
+            <div className="correct" onClick={() => this.props.plusScore(this.props.question.value, this.props.question.id, this.state.answered)}> Correct </div>
+            <div className="incorrect" onClick={() => this.props.minusScore(this.props.question.value, this.props.question.id, this.state.answered)}> Incorrect </div>
         </div>
     )
 }

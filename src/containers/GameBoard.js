@@ -26,8 +26,13 @@ export default class GameBoard extends Component{
             }))
     }
 
-    // increments our score, called by each question
-    plusScore = (value, id) =>{
+    // increments our score, called by each question. conditional on answer visibility
+    plusScore = (value, id, flipState) =>{
+        console.log(flipState, "flipState")
+        if (flipState != true) {
+            alert(`You must read the question before scoring yourself.`)
+            return
+        }
         if (this.state.answeredQuestions.includes(id)) {
             alert(`You've already answered this question!`)
         } else{
@@ -38,8 +43,13 @@ export default class GameBoard extends Component{
         }
     }
 
-    // decrements our score, called by each question
-    minusScore = (value, id) => {
+    // decrements our score, called by each question. conditional on answer visibility
+    minusScore = (value, id, flipState) => {
+        console.log(flipState, "flipState")
+        if(flipState != true){
+            alert(`You must read the question before scoring yourself.`)
+            return
+        }
         if(this.state.answeredQuestions.includes(id) ){
             alert(`You've already answered this question!`)
         } else{
@@ -49,17 +59,6 @@ export default class GameBoard extends Component{
         })
     }
     }
-
-    // checks if question has been scored already
-    // alreadyScored = (questionId) => {
-    //     if (this.state.answeredQuestions.includes(questionId) ){
-    //         alert(`You've already scored this question.`)
-    //     } else {
-    //         this.setState({
-    //             answeredQuestions: [...this.state.answeredQuestions, questionId]
-    //         })
-    //     }
-    // }
 
   
     // returns us the questions
