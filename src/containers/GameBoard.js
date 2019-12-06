@@ -28,8 +28,6 @@ export default class GameBoard extends Component{
 
     // increments our score, called by each question
     plusScore = (value, id) =>{
-        console.log(value, "a plus click")
-        console.log(id, "question id")
         if (this.state.answeredQuestions.includes(id)) {
             alert(`You've already answered this question!`)
         } else{
@@ -42,8 +40,6 @@ export default class GameBoard extends Component{
 
     // decrements our score, called by each question
     minusScore = (value, id) => {
-        console.log(value, "a minus click")
-        console.log(id, "question id")
         if(this.state.answeredQuestions.includes(id) ){
             alert(`You've already answered this question!`)
         } else{
@@ -55,15 +51,15 @@ export default class GameBoard extends Component{
     }
 
     // checks if question has been scored already
-    alreadyScored = (questionId) => {
-        if (this.state.answeredQuestions.includes(questionId) ){
-            alert(`You've already scored this question.`)
-        } else {
-            this.setState({
-                answeredQuestions: [...this.state.answeredQuestions, questionId]
-            })
-        }
-    }
+    // alreadyScored = (questionId) => {
+    //     if (this.state.answeredQuestions.includes(questionId) ){
+    //         alert(`You've already scored this question.`)
+    //     } else {
+    //         this.setState({
+    //             answeredQuestions: [...this.state.answeredQuestions, questionId]
+    //         })
+    //     }
+    // }
 
   
     // returns us the questions
