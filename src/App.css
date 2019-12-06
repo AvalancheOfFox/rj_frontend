@@ -41,6 +41,10 @@
   
 }
 
+div{
+  display: relative;
+}
+
 .hidden{
   visibility: hidden;
 }
@@ -53,6 +57,7 @@
   border-top-right-radius: 50px;
   border-top-left-radius: 50px;
   box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+  transition: all .2s ease-in-out;
 }
 
 .incorrect{
@@ -62,6 +67,12 @@
   border-bottom-right-radius: 65px;
   border-bottom-left-radius: 65px;
   box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+  transition: all .2s ease-in-out;
+  margin-bottom: .5em;
+}
+
+.incorrect:hover, .correct:hover{
+  transform: scale(1.05);
 }
 
 .currentScore{
@@ -82,15 +93,17 @@
   border: lime;
 }
 
-.value{
-  text-shadow: 0 1px 2px rgba(5,0,0,0.75);
-}
 
-.category{
+.category, .value, .question{
     text-shadow: 0 1px 2px rgba(5,0,0,0.75);
 }
 
+.category:hover, .value:hover, .question:hover, .questionText:hover{
+  color: goldenrod;
+  cursor: grab;
+}
 
-
-
-
+p:hover{
+  color: greenyellow;
+  cursor: none;
+}

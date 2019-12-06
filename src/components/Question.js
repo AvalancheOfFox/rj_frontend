@@ -6,7 +6,6 @@ export default class Question extends Component{
     state = {
         flipped: false,
         answered: false,
-       
     }
 
     handleQuestionFlip = () => {
@@ -35,7 +34,7 @@ render(){
             <div onClick={this.handleQuestionFlip}>
                 <h1 className="value">Value: ${this.props.question.value}</h1>
                 <h1 className="category">{(this.props.question.category).charAt(0).toUpperCase() + this.props.question.category.slice(1)}</h1>
-                <h4 onClick={this.handleAnswer} className={!this.state.flipped === true ? "hidden": ""}>{this.props.question.question}</h4>
+                <h4 onClick={this.handleAnswer} className={!this.state.flipped === true ? "hidden": "questionText"}>{this.props.question.question}</h4>
                 <p className={!this.state.answered === true ? "hidden": ""}>{this.props.question.answer}</p>
             </div>
             <div className="correct" onClick={() => this.props.plusScore(this.props.question.value, this.props.question.id, this.state.answered)}> Correct </div>
